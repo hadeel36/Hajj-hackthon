@@ -27,8 +27,8 @@ class UserTripsController extends Controller
     public function accessRules()
     {
         return array(
-            array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+            array('allow',  // allow all users to perform 'add', 'index' and 'view' actions
+                'actions' => array('index', 'view', 'add'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -166,5 +166,28 @@ class UserTripsController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Add pilgrim to trip
+     * @return string
+     */
+    public function actionAdd()
+    {
+        $model = new UserTrips;
+        if (isset($_POST['UserTrips'])) {
+            $model->attributes = $_POST['UserTrips'];
+            if ($model->save()) {
+                return json_encode([
+                    'success' => true,
+                    'data' => null
+                ]);
+            }
+        }
+
+        return json_encode([
+            'success' => false,
+            'data' => null
+        ]);
     }
 }

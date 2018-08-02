@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "users". = PILGRIMS
  *
  * The followings are the available columns in table 'users':
  * @property string $id
