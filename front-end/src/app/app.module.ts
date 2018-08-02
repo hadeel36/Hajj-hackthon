@@ -21,6 +21,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { AlertComponent } from '../components/alert/alert';
+import { HttpRequestsService } from './services/http-requests.service';
+import { UserMessagesService } from './services/user-messages.service';
+import { LoginPage } from '../pages/login/login';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -35,7 +39,8 @@ export function createTranslateLoader(http: HttpClient) {
     TabsPage,
     LanguagesPage,
     ScanQrCodePage,
-    TripsPage
+    TripsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -60,13 +65,17 @@ export function createTranslateLoader(http: HttpClient) {
     TabsPage,
     LanguagesPage,
     ScanQrCodePage,
-    TripsPage
+    TripsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
     Push,
+    AlertComponent,
+    HttpRequestsService,
+    UserMessagesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
