@@ -61,6 +61,11 @@ class TripsHelper
                 ),
             ));
         }
-        return $trips;
+
+        $aTrips = [];
+        foreach ($trips as $trip) {
+            $aTrips[] = $trip->getAttributes();
+        }
+        return $aTrips;
     }
 }

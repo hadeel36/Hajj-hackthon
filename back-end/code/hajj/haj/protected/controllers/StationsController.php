@@ -28,7 +28,7 @@ class StationsController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view', 'getDestinations'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -166,5 +166,26 @@ class StationsController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Get all possible destinations
+     * @return string
+     */
+    public function actionGetDestinations()
+    {
+        $destinations = Stations::model()->findAll();
+        $aDestinations = [];
+        foreach ($destinations as $destination)
+        {
+            $aDestinations[] = $destination->getAttributes();
+        }
+
+        return json_encode([
+            'success' => true,
+            'data' => [
+                'destinations' => $aDestinations
+            ]
+        ]);
     }
 }

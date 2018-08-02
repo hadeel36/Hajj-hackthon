@@ -28,7 +28,7 @@ class BusesController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view', 'getBuses'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -166,5 +166,24 @@ class BusesController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Get all buses
+     */
+    public function actionGet()
+    {
+        $buses = Buses::model()->findAll();
+        $aBuses = [];
+        foreach ($buses as $bus) {
+            $aBuses[] = $bus->getAttributes();
+        }
+
+        return json_encode([
+            'success' => true,
+            'data' => [
+                'buses' => $aBuses
+            ]
+        ]);
     }
 }

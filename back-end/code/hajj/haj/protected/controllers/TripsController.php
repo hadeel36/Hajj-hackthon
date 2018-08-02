@@ -27,12 +27,12 @@ class TripsController extends Controller
     public function accessRules()
     {
         return array(
-            array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'getTrips'),
+            array('allow',  // allow all users to perform 'index', 'getTrips', 'create' and 'view' actions
+                'actions' => array('index', 'view', 'getTrips', 'create'),
                 'users' => array('*'),
             ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+            array('allow', // allow authenticated user to perform 'update' actions
+                'actions' => array('update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -59,6 +59,21 @@ class TripsController extends Controller
     }
 
     /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer $id the ID of the model to be loaded
+     * @return Trips the loaded model
+     * @throws CHttpException
+     */
+    public function loadModel($id)
+    {
+        $model = Trips::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
@@ -66,24 +81,27 @@ class TripsController extends Controller
     {
         $model = new Trips;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
         if (isset($_POST['Trips'])) {
             $model->attributes = $_POST['Trips'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()) {
+                $model->refresh();
+                return json_encode([
+                    'success' => 'true',
+                    'data' => ['account' => $model->getAttributes()]
+                ]);
+            }
         }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
+        return json_encode([
+            'success' => 'false',
+            'data' => null
+        ]);
     }
 
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
+     * @throws CHttpException
      */
     public function actionUpdate($id)
     {
@@ -147,33 +165,6 @@ class TripsController extends Controller
     }
 
     /**
-     * Returns the data model based on the primary key given in the GET variable.
-     * If the data model is not found, an HTTP exception will be raised.
-     * @param integer $id the ID of the model to be loaded
-     * @return Trips the loaded model
-     * @throws CHttpException
-     */
-    public function loadModel($id)
-    {
-        $model = Trips::model()->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
-        return $model;
-    }
-
-    /**
-     * Performs the AJAX validation.
-     * @param Trips $model the model to be validated
-     */
-    protected function performAjaxValidation($model)
-    {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'trips-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-    }
-
-    /**
      * @return string
      */
     public function actionGetTrips()
@@ -195,5 +186,17 @@ class TripsController extends Controller
             'success' => false,
             'data' => null
         ]);
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param Trips $model the model to be validated
+     */
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'trips-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
     }
 }
