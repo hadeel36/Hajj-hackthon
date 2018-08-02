@@ -197,7 +197,6 @@ class UserTripsController extends Controller
      */
     public function actionAttend()
     {
-
         if (!empty($_POST['trip_id']) && !empty($_POST['qr_code'])) {
             $account = AccountHelper::getAccountByQR($_POST['qr_code']);
             if (is_object($account)) {

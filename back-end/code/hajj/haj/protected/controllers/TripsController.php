@@ -87,7 +87,7 @@ class TripsController extends Controller
                 $model->refresh();
                 return json_encode([
                     'success' => 'true',
-                    'data' => ['account' => $model->getAttributes()]
+                    'data' => ['trip' => $model->getAttributes()]
                 ]);
             }
         }
