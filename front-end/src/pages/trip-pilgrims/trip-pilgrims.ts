@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TripPilgrimsPage } from './../trip-pilgrims/trip-pilgrims';
 
 /**
- * Generated class for the TripsPage page.
+ * Generated class for the TripPilgrimsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,16 @@ import { TripPilgrimsPage } from './../trip-pilgrims/trip-pilgrims';
 
 @IonicPage()
 @Component({
-  selector: 'page-trips',
-  templateUrl: 'trips.html',
+  selector: 'page-trip-pilgrims',
+  templateUrl: 'trip-pilgrims.html',
 })
-export class TripsPage {
+export class TripPilgrimsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TripsPage');
+    console.log('ionViewDidLoad TripPilgrimsPage');
   }
 
-  openTripPilgrims() {
-    this.navCtrl.push(TripPilgrimsPage);
-  }
 }

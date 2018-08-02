@@ -22,7 +22,10 @@
     <ion-list>
       <button ion-item [ngStyle]="{'color': 'green'}">
         <!-- <ion-icon name="cart" item-start></ion-icon> -->
-        From Airport to Mecca   <button ion-button color="secondary" outline>View trip pilgrims list</button>
+        From Airport to Mecca   
+        <!-- <button (click)="openTripPilgrims()" ion-button color="secondary" outline>View pilgrims list</button> -->
+        <button ion-button clear block color="secondary" (click)="openTripPilgrims()">View pilgrims list</button>
+
  
       </button>
   

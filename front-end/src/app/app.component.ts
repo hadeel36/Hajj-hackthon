@@ -1,12 +1,14 @@
+import { AuthService } from "./services/core/auth.service";
 import { Component } from "@angular/core";
 import { Platform } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
-import { Push, PushObject, PushOptions } from "@ionic-native/push";
+import { Push, PushOptions, PushObject } from "@ionic-native/push";
 
 import { TabsPage } from "../pages/tabs/tabs";
 @Component({
   templateUrl: "app.html",
+  providers: [AuthService],
 })
 export class MyApp {
   rootPage: any = TabsPage;
@@ -17,6 +19,7 @@ export class MyApp {
     splashScreen: SplashScreen,
     private push: Push,
   ) {
+    this.displayPageBasedOnAuthenticationState();
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -80,5 +83,13 @@ export class MyApp {
     pushObject
       .on("error")
       .subscribe(error => console.error("Error with Push plugin", error));
+  }
+
+  displayPageBasedOnAuthenticationState() {
+    //if (this.authService.isAuthenticated()) {
+    this.rootPage = TabsPage;
+    //} else {
+    //this.rootPage = LoginPage;
+    //}
   }
 }

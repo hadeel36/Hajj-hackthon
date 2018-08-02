@@ -1,0 +1,43 @@
+page-login {
+
+    .login-form {
+        margin-top: 70px;
+    }
+    .logo {
+        text-align: center;
+        margin: 20px auto 0;
+        width: 180px;
+    }
+
+    .item-ios,
+    .item-md {
+        background: transparent;
+        padding-left: 0;
+    }
+
+    .item-ios.item-block .item-inner,
+    .item-md.item-block .item-inner {
+        border-color: color($colors, dark, base);
+    }
+
+    .item-input ion-label {
+        color:  color($colors, dark, base);
+        margin: 11px;
+        min-width: 20px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .margin-button {
+        margin-top: 30px;
+    }
+
+    .signup {
+        color: color($colors, dark, base)
+    }
+
+    .signup span {
+        color: color($colors, primary, base)
+    }
+
+}
