@@ -190,4 +190,48 @@ class UserTripsController extends Controller
             'data' => null
         ]);
     }
+
+    /**
+     * Add pilgrim to trip
+     * @return string
+     */
+    public function actionAttend()
+    {
+
+        if (!empty($_POST['trip_id']) && !empty($_POST['qr_code'])) {
+            $account = AccountHelper::getAccountByQR($_POST['qr_code']);
+            if (is_object($account)) {
+                $accountTrip = UserTrips::model()->findByAttributes([
+                    'user_id' => $account->id,
+                    'trip_id' => $_POST['trip_id']
+                ]);
+                if (is_object($accountTrip)) {
+                    $accountTrip->taken = true;
+                    if ($accountTrip->save()) {
+                        return json_encode([
+                            'success' => true,
+                            'data' => null
+                        ]);
+                    }
+                } elseif (!empty($_POST['force']) && $_POST['force'] == true) {
+                    $accountTrip = new UserTrips();
+                    $accountTrip->trip_id = $_POST['trip_id'];
+                    $accountTrip->user_id = $account->id;
+                    $accountTrip->taken = true;
+                    $accountTrip->is_forced = true;
+                    if ($accountTrip->save()) {
+                        return json_encode([
+                            'success' => true,
+                            'data' => null
+                        ]);
+                    }
+                }
+            }
+        }
+
+        return json_encode([
+            'success' => false,
+            'data' => null
+        ]);
+    }
 }

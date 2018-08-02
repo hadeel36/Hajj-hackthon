@@ -49,7 +49,7 @@ $('.search-form form').submit(function(){
         'id',
         'trip_id',
         'user_id',
-        'is_coming',
+        'is_forced',
         'created_at',
         array(
             'class' => 'CButtonColumn',

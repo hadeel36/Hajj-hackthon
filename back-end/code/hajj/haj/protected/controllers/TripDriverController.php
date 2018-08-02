@@ -169,7 +169,7 @@ class TripDriverController extends Controller
     }
 
     /**
-     * Add pilgrim to trip
+     * Add driver to trip
      * @return string
      */
     public function actionAdd()

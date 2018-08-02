@@ -7,7 +7,8 @@
  * @property string $id
  * @property string $trip_id
  * @property string $user_id
- * @property integer $is_coming
+ * @property integer $is_forced
+ * @property integer $taken
  * @property string $created_at
  *
  * The followings are the available model relations:
@@ -32,12 +33,12 @@ class UserTrips extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('trip_id, user_id, is_coming, created_at', 'required'),
-            array('is_coming', 'numerical', 'integerOnly' => true),
-            array('trip_id, user_id', 'length', 'max' => 10),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, trip_id, user_id, is_coming, created_at', 'safe', 'on' => 'search'),
+//            array('trip_id, user_id, is_forced, created_at', 'required'),
+//            array('is_forced', 'numerical', 'integerOnly' => true),
+//            array('trip_id, user_id', 'length', 'max' => 10),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, trip_id, user_id, is_forced, created_at', 'safe', 'on' => 'search'),
         );
     }
 
@@ -63,7 +64,8 @@ class UserTrips extends CActiveRecord
             'id' => 'ID',
             'trip_id' => 'Trip',
             'user_id' => 'User',
-            'is_coming' => 'Is Coming',
+            'is_forced' => 'Is Forced',
+            'taken' => 'Taken',
             'created_at' => 'Created At',
         );
     }
@@ -89,7 +91,8 @@ class UserTrips extends CActiveRecord
         $criteria->compare('id', $this->id, true);
         $criteria->compare('trip_id', $this->trip_id, true);
         $criteria->compare('user_id', $this->user_id, true);
-        $criteria->compare('is_coming', $this->is_coming);
+        $criteria->compare('is_forced', $this->is_forced);
+        $criteria->compare('taken', $this->taken);
         $criteria->compare('created_at', $this->created_at, true);
 
         return new CActiveDataProvider($this, array(

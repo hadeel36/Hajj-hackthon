@@ -32,9 +32,9 @@
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model, 'is_coming'); ?>
-        <?php echo $form->textField($model, 'is_coming'); ?>
-        <?php echo $form->error($model, 'is_coming'); ?>
+        <?php echo $form->labelEx($model, 'is_forced'); ?>
+        <?php echo $form->textField($model, 'is_forced'); ?>
+        <?php echo $form->error($model, 'is_forced'); ?>
     </div>
 
     <div class="row">
