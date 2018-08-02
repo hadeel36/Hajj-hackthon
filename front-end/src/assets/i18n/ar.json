@@ -1,0 +1,89 @@
+{
+  "TRADE_HUB": "tradehub",
+  "LOG_OUT": "Log out",
+  "EDIT": "Edit",
+  "NEWS_HUB": {
+    "NEWS_HUB": "مركز الاخبار",
+    "NEWS": "News",
+    "ARTICLES": "Articles",
+    "FUNDIMENTAL_REPORT": "Fundemntal Report",
+  },
+  "Tech_Hub": {
+    "Tech_Hub": "Tech Hub",
+    "PRODUCTS": "Products",
+    "SMART_REPORTS": "Smart Reports",
+    "TECHNICAL_REPORTS": "Technical Reports",
+    "CALCULATORS": "Calculators"
+  },
+  "CALENDARS": {
+    "CALENDARS": "Calenders",
+    "ECONOMIC_CALENDAR": "Economic Calendar",
+    "HOLYDAY_CALENDAR": "Holyday Calendar",
+    "CENTRAL_BANKS_CALENDAR": "Central Banks Calendar"
+  },
+  "EDUCATION": {
+    "EDUCATION": "Education",
+    "WEBINAR": "Webinar",
+    "SEMINAR": "Seminar"
+  },
+  "MEDIA_HUB": {
+    "MEDIA_HUB": "مركز الاعلام"
+  },
+  "FORM": {
+    "ENTER_VALID_EMAIL": "Please enter a valid email address.",
+    "ENTER_VALID_PASSWORD": "Please enter a valid password.",
+    "PASSWORD_MUST_INCLUDE": "Password must include a minimum of 8 characters, an alphabetic character, a numeric character, and a special character.",
+    "CONFIRM_PASSWORD_SHOULD_BE_EQUAL_TO_PASSWORD": "Confirm new password should be equal to new passsword ",
+    "SAVE": "Save",
+    "IS_REQUIRED": "is required"
+  },
+  "USER_MESSAGES": {
+    "SOMETHING_WENT_WRONG": "Something went wrong",
+    "BACKEND": {
+      "ERROR.UNAUTHORIZED": "Session not valid anymore. You have been logged out.",
+      "ERROR.MAIL.NOT.EXIST": "Mail does not exist.",
+      "ERROR.MAIL.CONFIRMED": "Mail already confirmed",
+      "ERROR.MAIL.NOT.CONFIRMED": "You need first to confirm your mail"
+    },
+    "REGISTER": {
+      "UNABLE_TO_REGISTER": "Unable to register a new team",
+      "REGISTER_SUCCESS": "Thank you for creating your team. Please check your mail to activate your account.",
+      "ACTIVATION_MAIL_RESEND__SUCCESS": "Activation mail re-sent successfully",
+      "ACTIVATION_MAIL_RESEND__FAIL": "Unable to Re-send activatin mail"
+    },
+    "LOGIN": {
+      "INCORRECT_USERNAME_OR_PASSWORD": "Wrong username or password",
+      "INCORRECT_ADMIN_PASSWRD": "Wrong admin password",
+      "INCORRECT_USERNAME_OR_DIRECT_LINK": "Wrong username or direct link"
+    }
+  },
+  "LANGUAGE": {
+    "LANGUAGE": "اللغة",
+    "en": "الانجليزية",
+    "ar": "العربية"
+  },
+  "ACTIVATION": {
+    "EXPIRED_LINK": "The link has expired",
+    "ALREADY_ACTIVATED": "You're mail has already been activated",
+    "ACTIVATION_SUCCESS": "Your mail has been activated successfully"
+  },
+  "USER": {
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "Email"
+  },
+  "REGISTER": {
+    "REGISTER": "Register",
+    "EMAIL_NOT_RECEIVED": "Haven't received an email?",
+    "SEND_MAIL_AGAIN": " Send mail again",
+    "NEED_TO_CONFIRM_EMAIL": "Please confirm your mail first.",
+    "NEED_TO_REGISTER_EMAIL": "You are not registered yet.",
+    "REGISTER_NOW": "Register now!"
+  },
+  "LOGIN": {
+    "LOGIN": "Login",
+    "PASSWORD": "Password",
+    "REGISTER": "Register Now!",
+    "GO_TO_LOGIN": "Go to Login Page"
+  }
+}

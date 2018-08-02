@@ -1,0 +1,138 @@
+{
+  "TRADE_HUB": "tradehub",
+  "DELETE": "Delete",
+  "MORE": "More",
+  "CANCEL": "Cancel",
+  "CONFIRM": "Confirm",
+  "BACK": "Back",
+  "NEXT": "Next",
+  "DETAILS": "Details",
+  "YES": "Yes",
+  "NO": "No",
+  "LOG_OUT": "Log out",
+  "EDIT": "Edit",
+  "MESSAGE": "Message",
+  "FROM": "From",
+  "TO": "To",
+  "SEARCH_PLACEHOLDER": "Search through all columns in the table",
+  "MULTI_TABLE_SEARCH_PLACEHOLDER": "Search through all columns in tables",
+  "NEWS_HUB": {
+    "NEWS_HUB": "News Hub",
+    "NEWS": "News",
+    "ARTICLES": "Articles",
+    "FUNDIMENTAL_REPORT": "Fundimental Report"
+  },
+  "TECH_HUB": {
+    "TECH_HUB": "Tech Hub",
+    "PRODUCTS": "Products",
+    "SMART_REPORTS": "Smart Reports",
+    "TECHNICAL_REPORTS": "Technical Reports",
+    "CALCULATORS": "Calculators"
+  },
+  "CALENDARS": {
+    "CALENDARS": "Calenders",
+    "ECONOMIC_CALENDAR": "Economic Calendar",
+    "HOLYDAY_CALENDAR": "Holyday Calendar",
+    "CENTRAL_BANKS_CALENDAR": "Central Banks Calendar"
+  },
+  "EDUCATION": {
+    "EDUCATION": "Education",
+    "WEBINAR": "Webinar",
+    "SEMINAR": "Seminar"
+  },
+  "MEDIA_HUB": {
+    "MEDIA_HUB": "Media Hub"
+  },
+  "MARKET_HUB": {
+    "MARKET_HUB": "Market Hub"
+  },
+  "SOCIAL_MEDIA": {
+    "SHARE": "Share",
+    "TWEET": "Tweet"
+  },
+  "FORM": {
+    "ENTER_VALID_EMAIL": "Please enter a valid email address.",
+    "ENTER_VALID_PASSWORD": "Please enter a valid password.",
+    "END_SHOULD_BE_AFTER_START": "End time should be after start time",
+    "PASSWORD_MUST_INCLUDE": "Password must include a minimum of 8 characters, an alphabetic character, a numeric character, and a special character.",
+    "CONFIRM_PASSWORD_SHOULD_BE_EQUAL_TO_PASSWORD": "Confirm new password should be equal to new passsword ",
+    "MAX_SHOULD_BE_MORE_THAN_MIN": "Max should be more than min",
+    "SHOULD_BE_POSITIVE": "shoule be a positive number",
+    "SAVE": "Save",
+    "SEND": "Send",
+    "IS_REQUIRED": "is required"
+  },
+  "USER_MESSAGES": {
+    "SOMETHING_WENT_WRONG": "Something went wrong",
+    "BACKEND": {
+      "ERROR.UNAUTHORIZED": "Session not valid anymore. You have been logged out.",
+      "ERROR.MAIL.NOT.EXIST": "Mail does not exist.",
+      "ERROR.MAIL.CONFIRMED": "Mail already confirmed",
+      "ERROR.MAIL.NOT.CONFIRMED": "You need first to confirm your mail"
+    },
+    "REGISTER": {
+      "UNABLE_TO_REGISTER": "Unable to register a new team",
+      "REGISTER_SUCCESS": "Thank you for creating your team. Please check your mail to activate your account.",
+      "ACTIVATION_MAIL_RESEND__SUCCESS": "Activation mail re-sent successfully",
+      "ACTIVATION_MAIL_RESEND__FAIL": "Unable to Re-send activatin mail"
+    },
+    "LOGIN": {
+      "INCORRECT_USERNAME_OR_PASSWORD": "Wrong username or password",
+      "INCORRECT_ADMIN_PASSWRD": "Wrong admin password",
+      "INCORRECT_USERNAME_OR_DIRECT_LINK": "Wrong username or direct link"
+    },
+    "CONTACT": {
+      "CONTACT_MESSAGE_SENT_SUCCESS": "The message has been sent successfully",
+      "CONTACT_MESSAGE_SENT_FAIL": "Unable to send message"
+    }
+  },
+  "LANGUAGE": {
+    "LANGUAGE": "Language",
+    "en": "English",
+    "ar": "Arabic"
+  },
+  "HOME": {
+    "HOME": "Home"
+  },
+  "ACTIVATION": {
+    "EXPIRED_LINK": "The link has expired",
+    "ALREADY_ACTIVATED": "You're mail has already been activated",
+    "ACTIVATION_SUCCESS": "Your mail has been activated successfully"
+  },
+  "PAGE_NOT_FOUND": {
+    "MESSAGE_404": "Woops, the page you're looking for isn't there!",
+    "GO_TO_PREVIOUS_PAGE": "Go to previous page"
+  },
+  "UNDER_MAINTENANCE": {
+    "DOWN_FOR_MAINTENANCE": "tradehub is currently down for maintenance",
+    "BACK_WITH_IMPROVEMENTS": "We will be back soon with improvements.",
+    "APPOLOGIZE": "We apologize for the inconvenience and appreciate your patience.",
+    "THANKS": "Thank you for using tradehub.",
+    "SORRY": "We're Sorry"
+  },
+  "USER": {
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "Email"
+  },
+  "REGISTER": {
+    "REGISTER": "Register",
+    "EMAIL_NOT_RECEIVED": "Haven't received an email?",
+    "SEND_MAIL_AGAIN": " Send mail again",
+    "NEED_TO_CONFIRM_EMAIL": "Please confirm your mail first.",
+    "NEED_TO_REGISTER_EMAIL": "You are not registered yet.",
+    "REGISTER_NOW": "Register now!"
+  },
+  "LOGIN": {
+    "LOGIN": "Login",
+    "PASSWORD": "Password",
+    "REGISTER": "Register Now!",
+    "GO_TO_LOGIN": "Go to Login Page"
+  },
+  "FOOTER": {
+    "TERMS_CONDITIONS": "Terms & Conditions",
+    "COPY_RIGHT": "© 2018 Copyright"
+  },
+  "ABOUT": {},
+  "CONTACT": {}
+}

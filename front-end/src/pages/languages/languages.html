@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>languages</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-select [(ngModel)]="selectedLanguageCode">
+    <ion-icon name="globe"></ion-icon>
+    <ion-option *ngFor="let lang of appLanguages" (click)="languageSelected(lang.code)" [value]="lang.code">
+      {{ ('LANGUAGE.' + lang.code) | translate}}
+    </ion-option>
+  </ion-select> -->
+
+  {{'SEARCH_PLACEHOLDER' | translate}}
+  <!-- <ion-item-group radio-group [(ngModel)]="selectedLanguageCode" (change)="test()">
+    <ion-item-divider color="light">Languages</ion-item-divider>
+    <ion-item *ngFor="let lang of appLanguages">
+      <ion-label>{{lang.name}}</ion-label>
+      <ion-radio [value]="lang.code"></ion-radio>
+    </ion-item>
+  </ion-item-group> -->
+
+  <!-- {{appLanguages | json}} -->
+  <ion-list>
+    <button ion-item *ngFor="let lang of appLanguages" (click)="languageSelected(lang.code)">
+      {{ lang.name }}
+    </button>
+  </ion-list>
+</ion-content>

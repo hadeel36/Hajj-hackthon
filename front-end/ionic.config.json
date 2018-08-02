@@ -1,0 +1,7 @@
+{
+  "name": "Cleanos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
