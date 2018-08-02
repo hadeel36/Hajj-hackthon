@@ -27,8 +27,8 @@ class UserTripsController extends Controller
     public function accessRules()
     {
         return array(
-            array('allow',  // allow all users to perform 'add', 'index' and 'view' actions
-                'actions' => array('index', 'view', 'add'),
+            array('allow',  // allow all users to perform 'add', 'attend', 'index' and 'view' actions
+                'actions' => array('index', 'view', 'add', 'attend'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
