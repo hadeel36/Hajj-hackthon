@@ -198,11 +198,12 @@ class UserTripsController extends Controller
     public function actionAttend()
     {
         if (!empty($_POST['trip_id']) && !empty($_POST['qr_code'])) {
+            $tripId = $_POST['trip_id'];
             $account = AccountHelper::getAccountByQR($_POST['qr_code']);
             if (is_object($account)) {
                 $accountTrip = UserTrips::model()->findByAttributes([
                     'user_id' => $account->id,
-                    'trip_id' => $_POST['trip_id']
+                    'trip_id' => $tripId
                 ]);
                 if (is_object($accountTrip)) {
                     $accountTrip->taken = true;
@@ -214,15 +215,17 @@ class UserTripsController extends Controller
                     }
                 } elseif (!empty($_POST['force']) && $_POST['force'] == true) {
                     $accountTrip = new UserTrips();
-                    $accountTrip->trip_id = $_POST['trip_id'];
+                    $accountTrip->trip_id = $tripId;
                     $accountTrip->user_id = $account->id;
                     $accountTrip->taken = true;
                     $accountTrip->is_forced = true;
                     if ($accountTrip->save()) {
-                        return json_encode([
-                            'success' => true,
-                            'data' => null
-                        ]);
+                        if(TripsHelper::updateTripSeats($tripId, 1)) {
+                            return json_encode([
+                                'success' => true,
+                                'data' => null
+                            ]);
+                        }
                     }
                 }
             }

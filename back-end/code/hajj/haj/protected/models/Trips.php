@@ -10,8 +10,8 @@
  * @property string $destination
  * @property string $departure_time
  * @property string $arrival_time
- * @property string $free_seats
- * @property string $occupied_seats
+ * @property int $free_seats
+ * @property int $occupied_seats
  * @property string $created_at
  *
  * The followings are the available model relations:
