@@ -68,4 +68,19 @@ class TripsHelper
         }
         return $aTrips;
     }
+
+    /**
+     * @param Trips $oTrip
+     * @return bool
+     */
+    public static function initializeTripSeats(Trips $oTrip)
+    {
+        $bus = Buses::model()->findByPk($oTrip->bus_id);
+        if(is_object($bus)) {
+            $oTrip->free_seats = $bus->capacity;
+            $oTrip->occupied_seats = 0;
+            return $oTrip->save();
+        }
+        return false;
+    }
 }
