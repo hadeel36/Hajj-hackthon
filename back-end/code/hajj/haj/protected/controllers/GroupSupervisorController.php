@@ -2,6 +2,19 @@
 
 class GroupSupervisorController extends Controller
 {
+    var $account_type;
+    var $name;
+    var $national_id;
+    var $email;
+    var $first_name;
+    var $middle_name;
+    var $last_name;
+    var $photo;
+    var $phone;
+    var $job;
+    var $birth_date;
+    var $nationality;
+
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -48,6 +61,7 @@ class GroupSupervisorController extends Controller
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
+     * @throws CHttpException
      */
     public function actionView($id)
     {
@@ -82,6 +96,7 @@ class GroupSupervisorController extends Controller
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
+     * @throws CHttpException
      */
     public function actionUpdate($id)
     {
@@ -105,6 +120,8 @@ class GroupSupervisorController extends Controller
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
+     * @throws CDbException
+     * @throws CHttpException
      */
     public function actionDelete($id)
     {
@@ -166,5 +183,29 @@ class GroupSupervisorController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Create account
+     * @return string
+     */
+    public function actionCreateAccount()
+    {
+        $model = new AccountForm();
+        if (isset($_POST['Account'])) {
+            $model->attributes = $_POST['Account'];
+            $newAccount = $model->createAccount();
+            if (is_object($newAccount)) {
+                return json_encode([
+                    'success' => 'true',
+                    'data' => ['account' => $newAccount->getAttributes()]
+                ]);
+            }
+        }
+
+        return json_encode([
+            'success' => 'false',
+            'data' => null
+        ]);
     }
 }

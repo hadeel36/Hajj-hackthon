@@ -25,6 +25,18 @@ class Drivers extends CActiveRecord
     }
 
     /**
+     * This is invoked after the record is saved.
+     * @throws CDbException
+     */
+    protected function afterSave()
+    {
+        $this->qr_code = AccountTypesEnum::DRIVER . '_' . $this->id;
+        if ($this->update(['qr_code'])) {
+            parent::afterSave();
+        }
+    }
+
+    /**
      * @return array validation rules for model attributes.
      */
     public function rules()

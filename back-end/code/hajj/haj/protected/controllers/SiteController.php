@@ -144,4 +144,18 @@ class SiteController extends Controller
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
+
+    /**
+     * Get accounts types with labels
+     *
+     * @return string
+     */
+    public function actionGetAccountTypes()
+    {
+        $typesWithLabels = AccountTypesEnum::getTypesWithLabels();
+        return json_encode([
+            'success' => true,
+            'data' => $typesWithLabels
+        ]);
+    }
 }

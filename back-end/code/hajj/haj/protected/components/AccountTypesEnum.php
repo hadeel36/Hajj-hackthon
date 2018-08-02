@@ -25,4 +25,24 @@ class AccountTypesEnum
             self::USER
         ];
     }
+
+    /**
+     * @param string|null $exclude
+     * @return array
+     */
+    public static function getTypesWithLabels($exclude = null)
+    {
+        $typesWithLabels = [
+            self::BUS_SUPERVISOR => 'Bus supervisor',
+            self::DRIVER => 'Driver',
+            self::GROUP_SUPERVISOR => 'Group supervisor',
+            self::USER => 'Pilgrim'
+        ];
+
+        if (!is_null($exclude)) {
+            unset($typesWithLabels[$exclude]);
+        }
+
+        return $typesWithLabels;
+    }
 }
