@@ -29,12 +29,12 @@ class Stations extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, address, number_of_buses, notes, created_at', 'required'),
-            array('number_of_buses', 'numerical', 'integerOnly' => true),
-            array('name, address', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, name, address, number_of_buses, notes, created_at', 'safe', 'on' => 'search'),
+//            array('name, address, number_of_buses, notes, created_at', 'required'),
+//            array('number_of_buses', 'numerical', 'integerOnly' => true),
+//            array('name, address', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, name, address, number_of_buses, notes, created_at', 'safe', 'on' => 'search'),
         );
     }
 

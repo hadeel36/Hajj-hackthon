@@ -48,12 +48,12 @@ class Users extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'required'),
-            array('job, is_enabled', 'numerical', 'integerOnly' => true),
-            array('first_name, middle_name, last_name, email, photo, phone, nationality, qr_code', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'safe', 'on' => 'search'),
+//            array('first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'required'),
+//            array('job, is_enabled', 'numerical', 'integerOnly' => true),
+//            array('first_name, middle_name, last_name, email, photo, phone, nationality, qr_code', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'safe', 'on' => 'search'),
         );
     }
 
