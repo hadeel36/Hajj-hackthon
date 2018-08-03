@@ -7,7 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>My Trips</ion-title>
+    <ion-title >
+      <img src="assets/imgs/bus-logo.png" style="height:35px; " />
+       <span style="color: gray; position:absolute; margin-left:10px; top:5px;">t-QR</span>
+
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,33 +22,34 @@
     <!-- <ion-card-header>
       Trips to Supervise
     </ion-card-header> -->
-  
+
     <ion-list>
-      <button ion-item [ngStyle]="{'color': 'green'}">
-        <!-- <ion-icon name="cart" item-start></ion-icon> -->
-        From Airport to Mecca   
-        <!-- <button (click)="openTripPilgrims()" ion-button color="secondary" outline>View pilgrims list</button> -->
-        <button ion-button clear block color="secondary" (click)="openTripPilgrims()">View pilgrims list</button>
+      <ion-item *ngFor="let trip of myTrips; let i = index">
+        <h2>
+          <span *ngIf="trip.source"> From
+            <span style="font-weight:bold;"> {{trip.source}}</span>
+          </span>
+          <span *ngIf="trip.source">to
+            <span style="font-weight:bold;"> {{trip.destination}}</span>
+          </span>
+          <span *ngIf="i===0" style="color: green"> (Active Now)</span>
+        </h2>
+        <p>Departure:
+          <span style="font-weight:bold;"> {{trip.departure_time | date:"MM/dd/yyyy hh:mm a" }}
+          </span>
+          <span style="font-weight:bold;margin:0 5px;">-</span>
 
- 
-      </button>
-  
-      <button ion-item>
-        <!-- <ion-icon name="medical" item-start></ion-icon> -->
-        From Mecca to Mina
-      </button>
-  
-      <button ion-item>
-        <!-- <ion-icon name="cafe" item-start></ion-icon> -->
-        From Mina to Arafeh 
-      </button>
-  
-      <button ion-item>
-        <!-- <ion-icon name="paw" item-start></ion-icon> -->
-        From Arafeh to Muzdalifa
-      </button>
-
-  
+          Arrival:
+          <span style="font-weight:bold;"> {{trip.arrival_time | date:"MM/dd/yyyy hh:mm a" }} </span>
+        </p>
+        <p>
+          Free Seats:
+          <span style="font-weight:bold;margin-right: 15px;">{{trip.free_seats }} </span>
+          All Seats:
+          <span style="font-weight:bold"> {{trip.free_seats + trip.occupied_seats }}</span>
+        </p>
+        <button *ngIf="i === 0 && currentUserData && currentUserData.account_type === accountTypes.BUS_SUPERVISOR" ion-button clear item-end (click)="openTripPilgrims()">View Pilgrims List</button>
+      </ion-item>
     </ion-list>
   </ion-card>
 </ion-content>

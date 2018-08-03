@@ -11,10 +11,10 @@ export class HttpRequestsService {
   private baseUrl: string;
 
   constructor(private http: HttpClient, private userMessagesService: UserMessagesService) {
-    this.baseUrl ='http://hajj.malakabuhammad.com/haj/index.php?r=site';
+    this.baseUrl ='http://hajj.malakabuhammad.com/haj/index.php?r=';
     this.requestHeader = new HttpHeaders({
       'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     });
     this.requestOptions = {
       headers: this.requestHeader

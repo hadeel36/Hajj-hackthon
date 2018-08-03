@@ -1,44 +1,16 @@
-<!-- <ion-content padding>
+<ion-content padding class="background">
   <div class="logo">
     <img src="assets/imgs/logo.png" />
   </div>
-  <ion-grid>
-    <form class="login-form" [formGroup]="form" (ngSubmit)="loginForm()" autocomplete="off" novalidate>
-        <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label>
-                  <ion-icon name="icon-closed-envelope-email"></ion-icon>
-                </ion-label>
-                <ion-input clearInput type="text" formControlName="email" placeholder="Email Address"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label>
-                  <ion-icon name="icon-blocked-padlock"></ion-icon>
-                </ion-label>
-                <ion-input clearInput type="password" formControlName="password" placeholder="Password"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <button class="margin-button" ion-button block text-uppercase	type="submit">Log in</button>
-            </ion-col>
-          </ion-row>
-    </form>
-    <ion-row>
-      <ion-col>
-          <button ion-button clear block color="secondary" (click)="forgetpassword()">Forget Password?</button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center class="signup">
-          Dont Have Account? <span class="primary" text-uppercase	(click)="signup()">SIGN UP</span>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content> -->
+
+  <ion-content>
+    <button class="login-btn" ion-button clear (click)="scanCode()">Scan your code to start</button>
+  </ion-content>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Result from Scan: {{ scannedCode }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

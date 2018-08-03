@@ -1,0 +1,190 @@
+<ion-header>
+  wdwefew
+  <ion-navbar>
+    <button *ngIf="userId" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span *ngIf="userId; else newUser">
+        Profile
+        <!-- <ion-icon *ngIf="form.disabled; else editMode" name="create" (click)="form.enable()" padding></ion-icon> -->
+      </span>
+      <ng-template #newUser>
+        <span> Create User</span>
+      </ng-template>
+    </ion-title>
+    <ion-buttons end *ngIf="userId">
+      <button ion-button icon-only>
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <form [formGroup]="form" (ngSubmit)="sendRequest()" autocomplete="off" novalidate>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-messenger-user-avatar"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="first_name" placeholder="First Name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-messenger-user-avatar"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="middle_name" placeholder="Middle Name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-messenger-user-avatar"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="last_name" placeholder="Last Name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="icon-messenger-user-avatar"></ion-icon>
+              </ion-label>
+              <ion-input clearInput type="text" formControlName="national_id" placeholder="National ID"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="transgender"></ion-icon>
+            </ion-label>
+            <ion-select formControlName="account_type" placeholder="Account Type">
+              <ion-option value="us">Piligrim</ion-option>
+              <ion-option value="dr">Driver</ion-option>
+              <ion-option value="bs">Bus Supervisor </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="transgender"></ion-icon>
+            </ion-label>
+            <ion-select formControlName="gender" placeholder="Gender">
+              <ion-option value="female">Female</ion-option>
+              <ion-option value="male">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="item-input">
+            <ion-label>
+              <ion-icon name="calendar"></ion-icon>
+            </ion-label>
+            <ion-datetime placeholder="Birth Date" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" formControlName="birth_date"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-cellphone-backside"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="number" formControlName="mobile_number" placeholder="Mobile Number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-telephone-call-receiver"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="landline" placeholder="Landline"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-closed-envelope-email"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="email" placeholder="Email Address"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-building-house"></ion-icon>
+              <span>Country</span>
+            </ion-label>
+            <ion-select formControlName="nationality">
+              <ion-option [value]="country.name" *ngFor="let country of countries">{{country.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-building-house"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="city" placeholder="City"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-web-page-home"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="address" placeholder="Street Address"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="icon-globe-circle"></ion-icon>
+            </ion-label>
+            <ion-input clearInput type="text" formControlName="citizenship" placeholder="Citizenship as per Passport"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="note">
+        <ion-col>
+          please indicate if you have dual citizenship or residency
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="margin-button" ion-button block text-uppercase type="submit">
+            Create a User
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

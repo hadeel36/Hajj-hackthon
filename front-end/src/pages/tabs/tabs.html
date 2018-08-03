@@ -1,7 +1,13 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Sacn QR Code" tabIcon="camera"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="View my QR Code" tabIcon="qr-scanner"></ion-tab>
-  <!-- <ion-tab [root]="tab4Root" tabTitle="Trips" tabIcon="trips"></ion-tab> -->
-  <ion-tab [root]="tab5Root" tabTitle="Trips" tabIcon="trips"></ion-tab>
+
+<ion-tabs *ngIf="currentUserData && currentUserData.account_type === accountTypes.GROUP_SUPERVISOR; else otherRoles">
+    <ion-tab [root]="tab6Root" tabTitle="Create User" tabIcon="person"></ion-tab>
 </ion-tabs>
+<ng-template #otherRoles>
+  <ion-tabs *ngIf="currentUserData" >
+    <!-- <ion-tab [root]="tab2Root" tabTitle="Sacn Others Code" tabIcon="camera"></ion-tab> -->
+    <!-- *ngIf="currentUserData.account_type === accountTypes.PILIGRIM || currentUserData.account_type === accountTypes.BUS_SUPERVISOR" -->
+    <ion-tab *ngIf="currentUserData.account_type === accountTypes.PILIGRIM" [root]="tab3Root" tabTitle="View my Code" tabIcon="qr-scanner"></ion-tab>
+    <!-- <ion-tab [root]="tab4Root" tabTitle="Trips" tabIcon="trips"></ion-tab> -->
+    <ion-tab [root]="tab5Root" tabTitle="My Trips" tabIcon="trips"></ion-tab>
+  </ion-tabs>
+</ng-template>

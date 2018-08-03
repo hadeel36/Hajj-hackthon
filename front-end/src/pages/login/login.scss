@@ -1,43 +1,53 @@
 page-login {
+  .login-form {
+    margin-top: 70px;
+  }
+  .logo {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 254px;
+    margin-top: 101px;
+  }
 
-    .login-form {
-        margin-top: 70px;
-    }
-    .logo {
-        text-align: center;
-        margin: 20px auto 0;
-        width: 180px;
-    }
+  .item-ios,
+  .item-md {
+    background: transparent;
+    padding-left: 0;
+  }
 
-    .item-ios,
-    .item-md {
-        background: transparent;
-        padding-left: 0;
-    }
+  .item-ios.item-block .item-inner,
+  .item-md.item-block .item-inner {
+    border-color: color($colors, dark, base);
+  }
 
-    .item-ios.item-block .item-inner,
-    .item-md.item-block .item-inner {
-        border-color: color($colors, dark, base);
-    }
+  .item-input ion-label {
+    color: color($colors, dark, base);
+    margin: 11px;
+    min-width: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
 
-    .item-input ion-label {
-        color:  color($colors, dark, base);
-        margin: 11px;
-        min-width: 20px;
-        text-align: center;
-        font-size: 16px;
-    }
+  .margin-button {
+    margin-top: 30px;
+  }
 
-    .margin-button {
-        margin-top: 30px;
-    }
+  .signup {
+    color: color($colors, dark, base);
+  }
 
-    .signup {
-        color: color($colors, dark, base)
-    }
+  .signup span {
+    color: color($colors, primary, base);
+  }
 
-    .signup span {
-        color: color($colors, primary, base)
-    }
-
+  .login-btn {
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: #7099e1;
+  }
 }

@@ -7,24 +7,7 @@ export class UserMessagesService {
   constructor( private translateService: TranslateService) {}
 
   showUserMessage(userMessages: any, messageType, err ? ) {
-    if (messageType === 'fail') {
-      if (userMessages && userMessages.fail === 'NO_ERROR_MESSAGE') {
-        return; // do not display an error message
-      }
-      if (!userMessages || userMessages.fail === undefined) {
-        userMessages = this.getFailMessage(userMessages, err);
-      }
-    }
-    if (userMessages && userMessages[messageType]) {
-      this.translateService.get('USER_MESSAGES.'.concat(userMessages[messageType])).subscribe(
-        translatedMessage => {
-          // this.snackBar.open(translatedMessage, '', {
-          //   duration: 2000,
-          //   panelClass: messageType === 'success' ? 'bg-success' : 'bg-error'
-          // });
-        }
-      );
-    }
+
   }
 
   getFailMessage(userMessages: any, err): any {

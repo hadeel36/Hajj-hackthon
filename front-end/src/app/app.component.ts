@@ -6,9 +6,10 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { Push, PushOptions, PushObject } from "@ionic-native/push";
 
 import { TabsPage } from "../pages/tabs/tabs";
+import { LoginPage } from "../pages/login/login";
+import { RegisterPage } from "../register/register";
 @Component({
-  templateUrl: "app.html",
-  providers: [AuthService],
+  templateUrl: "app.html"
 })
 export class MyApp {
   rootPage: any = TabsPage;
@@ -18,6 +19,7 @@ export class MyApp {
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     private push: Push,
+    private authService: AuthService,
   ) {
     this.displayPageBasedOnAuthenticationState();
     platform.ready().then(() => {
@@ -86,10 +88,10 @@ export class MyApp {
   }
 
   displayPageBasedOnAuthenticationState() {
-    //if (this.authService.isAuthenticated()) {
-    this.rootPage = TabsPage;
-    //} else {
-    //this.rootPage = LoginPage;
-    //}
+    if (this.authService.isAuthenticated()) {
+      this.rootPage = TabsPage;
+    } else {
+      this.rootPage = LoginPage; // LoginPage
+    }
   }
 }

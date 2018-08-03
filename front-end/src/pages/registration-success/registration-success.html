@@ -1,0 +1,24 @@
+<!--
+  Generated template for the RegistrationSuccessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>registration-success</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="qrValue">
+    <ion-card-content>
+      <p>Value: {{ qrValue.first_name }} has created successfuy </p>
+      <p> User Code: </p>
+      <ngx-qrcode [qrc-value]="stringQr"></ngx-qrcode>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

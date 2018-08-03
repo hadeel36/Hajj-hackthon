@@ -1,0 +1,56 @@
+page-register {
+    .note {
+        color: #919191;
+    }
+    .item-ios,
+    .item-md {
+        background: transparent;
+        padding-left: 0;
+    }
+
+    .item-ios.item-block .item-inner,
+    .item-md.item-block .item-inner {
+        border-color: color($colors, dark, base);
+    }
+
+    .no-border.item-ios.item-block .item-inner,
+    .no-border.item-md.item-block .item-inner {
+        border: 0;
+    }
+
+    .item-input ion-label {
+        color:  color($colors, dark, base);
+        margin: 11px;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .item-select ion-label {
+        color:  color($colors, dark, base);
+    }
+
+    .item-select ion-label ion-icon {
+        color:  color($colors, dark, base);
+        min-width: 20px;
+        text-align: center;
+        margin-right: 25px;
+        margin-top: 0;
+        margin-left: 11px;
+    }
+
+    .margin-button {
+        margin-top: 10px;
+    }
+
+    .terms {
+        color:  color($colors, primary, base);
+    }
+
+    .item-terms .item-cover {
+        width: 10%;
+    }
+
+    .dark-color {
+        color:  color($colors, dark, base);
+    }
+}
