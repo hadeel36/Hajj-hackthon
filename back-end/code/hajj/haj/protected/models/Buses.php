@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'buses':
  * @property string $id
  * @property string $name
- * @property string $number
+ * @property integer $number
  * @property integer $capacity
  * @property string $license_number
  * @property string $color

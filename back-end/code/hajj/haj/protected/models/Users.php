@@ -11,7 +11,7 @@
  * @property string $email
  * @property string $photo
  * @property string $phone
- * @property integer $job
+ * @property string $job
  * @property string $birth_date
  * @property string $nationality
  * @property string $qr_code
