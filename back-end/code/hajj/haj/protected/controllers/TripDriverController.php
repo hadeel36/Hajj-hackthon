@@ -27,8 +27,8 @@ class TripDriverController extends Controller
     public function accessRules()
     {
         return array(
-            array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+            array('allow',  // allow all users to perform 'add', 'index' and 'view' actions
+                'actions' => array('index', 'view', 'add'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -166,5 +166,28 @@ class TripDriverController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Add driver to trip
+     * @return string
+     */
+    public function actionAdd()
+    {
+        $model = new TripDriver();
+        if (isset($_POST['TripDriver'])) {
+            $model->attributes = $_POST['TripDriver'];
+            if ($model->save()) {
+                return json_encode([
+                    'success' => true,
+                    'data' => null
+                ]);
+            }
+        }
+
+        return json_encode([
+            'success' => false,
+            'data' => null
+        ]);
     }
 }

@@ -27,8 +27,8 @@
     </div>
 
     <div class="row">
-        <?php echo $form->label($model, 'is_coming'); ?>
-        <?php echo $form->textField($model, 'is_coming'); ?>
+        <?php echo $form->label($model, 'is_forced'); ?>
+        <?php echo $form->textField($model, 'is_forced'); ?>
     </div>
 
     <div class="row">

@@ -24,7 +24,7 @@ $this->menu = array(
         'id',
         'trip_id',
         'user_id',
-        'is_coming',
+        'is_forced',
         'created_at',
     ),
 )); ?>

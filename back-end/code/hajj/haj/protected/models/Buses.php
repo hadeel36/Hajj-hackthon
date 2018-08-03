@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'buses':
  * @property string $id
  * @property string $name
- * @property string $number
+ * @property integer $number
  * @property integer $capacity
  * @property string $license_number
  * @property string $color
@@ -34,12 +34,12 @@ class Buses extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, number, capacity, license_number, color, model, created_at', 'required'),
-            array('capacity', 'numerical', 'integerOnly' => true),
-            array('name, number, license_number, color, model', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, name, number, capacity, license_number, color, model, created_at', 'safe', 'on' => 'search'),
+//            array('name, number, capacity, license_number, color, model, created_at', 'required'),
+//            array('capacity', 'numerical', 'integerOnly' => true),
+//            array('name, number, license_number, color, model', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, name, number, capacity, license_number, color, model, created_at', 'safe', 'on' => 'search'),
         );
     }
 

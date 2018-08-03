@@ -85,10 +85,12 @@ class TripsController extends Controller
             $model->attributes = $_POST['Trips'];
             if ($model->save()) {
                 $model->refresh();
-                return json_encode([
-                    'success' => 'true',
-                    'data' => ['account' => $model->getAttributes()]
-                ]);
+                if (TripsHelper::initializeTripSeats($model)) {
+                    return json_encode([
+                        'success' => 'true',
+                        'data' => ['trip' => $model->getAttributes()]
+                    ]);
+                }
             }
         }
         return json_encode([

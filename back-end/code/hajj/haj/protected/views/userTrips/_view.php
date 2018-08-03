@@ -17,8 +17,12 @@
     <?php echo CHtml::encode($data->user_id); ?>
     <br/>
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('is_coming')); ?>:</b>
-    <?php echo CHtml::encode($data->is_coming); ?>
+    <b><?php echo CHtml::encode($data->getAttributeLabel('is_forced')); ?>:</b>
+    <?php echo CHtml::encode($data->is_forced); ?>
+    <br/>
+
+    <b><?php echo CHtml::encode($data->getAttributeLabel('taken')); ?>:</b>
+    <?php echo CHtml::encode($data->taken); ?>
     <br/>
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>

@@ -27,8 +27,8 @@ class UserTripsController extends Controller
     public function accessRules()
     {
         return array(
-            array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+            array('allow',  // allow all users to perform 'add', 'attend', 'index' and 'view' actions
+                'actions' => array('index', 'view', 'add', 'attend'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -166,5 +166,74 @@ class UserTripsController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    /**
+     * Add pilgrim to trip
+     * @return string
+     */
+    public function actionAdd()
+    {
+        $model = new UserTrips;
+        if (isset($_POST['UserTrips'])) {
+            $model->attributes = $_POST['UserTrips'];
+            if ($model->save()) {
+                return json_encode([
+                    'success' => true,
+                    'data' => null
+                ]);
+            }
+        }
+
+        return json_encode([
+            'success' => false,
+            'data' => null
+        ]);
+    }
+
+    /**
+     * Add pilgrim to trip
+     * @return string
+     */
+    public function actionAttend()
+    {
+        if (!empty($_POST['trip_id']) && !empty($_POST['qr_code'])) {
+            $tripId = $_POST['trip_id'];
+            $account = AccountHelper::getAccountByQR($_POST['qr_code']);
+            if (is_object($account)) {
+                $accountTrip = UserTrips::model()->findByAttributes([
+                    'user_id' => $account->id,
+                    'trip_id' => $tripId
+                ]);
+                if (is_object($accountTrip)) {
+                    $accountTrip->taken = true;
+                    if ($accountTrip->save()) {
+                        return json_encode([
+                            'success' => true,
+                            'data' => null
+                        ]);
+                    }
+                } elseif (!empty($_POST['force']) && $_POST['force'] == true) {
+                    $accountTrip = new UserTrips();
+                    $accountTrip->trip_id = $tripId;
+                    $accountTrip->user_id = $account->id;
+                    $accountTrip->taken = true;
+                    $accountTrip->is_forced = true;
+                    if ($accountTrip->save()) {
+                        if(TripsHelper::updateTripSeats($tripId, 1)) {
+                            return json_encode([
+                                'success' => true,
+                                'data' => null
+                            ]);
+                        }
+                    }
+                }
+            }
+        }
+
+        return json_encode([
+            'success' => false,
+            'data' => null
+        ]);
     }
 }

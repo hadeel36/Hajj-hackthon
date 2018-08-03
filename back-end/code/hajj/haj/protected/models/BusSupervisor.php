@@ -41,11 +41,11 @@ class BusSupervisor extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, national_id, email, qr_code, created_at', 'required'),
-            array('name, national_id, email, qr_code', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, name, national_id, email, qr_code, created_at', 'safe', 'on' => 'search'),
+//            array('name, national_id, email, qr_code, created_at', 'required'),
+//            array('name, national_id, email, qr_code', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, name, national_id, email, qr_code, created_at', 'safe', 'on' => 'search'),
         );
     }
 

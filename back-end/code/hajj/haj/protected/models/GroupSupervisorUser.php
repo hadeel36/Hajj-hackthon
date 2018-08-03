@@ -31,11 +31,11 @@ class GroupSupervisorUser extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('group_supervisor_id, user_id, created_at', 'required'),
-            array('group_supervisor_id, user_id', 'length', 'max' => 10),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, group_supervisor_id, user_id, created_at', 'safe', 'on' => 'search'),
+//            array('group_supervisor_id, user_id, created_at', 'required'),
+//            array('group_supervisor_id, user_id', 'length', 'max' => 10),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, group_supervisor_id, user_id, created_at', 'safe', 'on' => 'search'),
         );
     }
 

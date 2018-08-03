@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "users". = PILGRIMS
  *
  * The followings are the available columns in table 'users':
  * @property string $id
@@ -11,7 +11,7 @@
  * @property string $email
  * @property string $photo
  * @property string $phone
- * @property integer $job
+ * @property string $job
  * @property string $birth_date
  * @property string $nationality
  * @property string $qr_code
@@ -48,12 +48,12 @@ class Users extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'required'),
-            array('job, is_enabled', 'numerical', 'integerOnly' => true),
-            array('first_name, middle_name, last_name, email, photo, phone, nationality, qr_code', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'safe', 'on' => 'search'),
+//            array('first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'required'),
+//            array('job, is_enabled', 'numerical', 'integerOnly' => true),
+//            array('first_name, middle_name, last_name, email, photo, phone, nationality, qr_code', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, first_name, middle_name, last_name, email, photo, phone, job, birth_date, nationality, qr_code, is_enabled, created_at', 'safe', 'on' => 'search'),
         );
     }
 

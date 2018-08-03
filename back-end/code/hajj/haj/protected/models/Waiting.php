@@ -33,13 +33,13 @@ class Waiting extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, user_order, departure_time, source, destination, created_at', 'required'),
-            array('user_order', 'numerical', 'integerOnly' => true),
-            array('user_id', 'length', 'max' => 11),
-            array('source, destination', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, user_id, user_order, departure_time, source, destination, created_at', 'safe', 'on' => 'search'),
+//            array('user_id, user_order, departure_time, source, destination, created_at', 'required'),
+//            array('user_order', 'numerical', 'integerOnly' => true),
+//            array('user_id', 'length', 'max' => 11),
+//            array('source, destination', 'length', 'max' => 255),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, user_id, user_order, departure_time, source, destination, created_at', 'safe', 'on' => 'search'),
         );
     }
 

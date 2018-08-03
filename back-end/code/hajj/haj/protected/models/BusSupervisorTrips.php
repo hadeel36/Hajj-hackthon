@@ -27,11 +27,11 @@ class BusSupervisorTrips extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('bus_supervisor_id, trip_id, created_at', 'required'),
-			array('bus_supervisor_id, trip_id', 'length', 'max'=>10),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, bus_supervisor_id, trip_id, created_at', 'safe', 'on'=>'search'),
+//			array('bus_supervisor_id, trip_id, created_at', 'required'),
+//			array('bus_supervisor_id, trip_id', 'length', 'max'=>10),
+//			// The following rule is used by search().
+//			// @todo Please remove those attributes that should not be searched.
+//			array('id, bus_supervisor_id, trip_id, created_at', 'safe', 'on'=>'search'),
 		);
 	}
 

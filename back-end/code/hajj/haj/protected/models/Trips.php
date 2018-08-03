@@ -10,8 +10,8 @@
  * @property string $destination
  * @property string $departure_time
  * @property string $arrival_time
- * @property string $free_seats
- * @property string $occupied_seats
+ * @property int $free_seats
+ * @property int $occupied_seats
  * @property string $created_at
  *
  * The followings are the available model relations:
@@ -36,13 +36,13 @@ class Trips extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('bus_id, source_station_id, destination, free_seats, occupied_seats, created_at', 'required'),
-            array('bus_id, source_station_id, free_seats, occupied_seats', 'length', 'max' => 10),
-            array('destination', 'length', 'max' => 255),
-            array('departure_time, arrival_time', 'safe'),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, bus_id, source_station_id, destination, departure_time, arrival_time, free_seats, occupied_seats, created_at', 'safe', 'on' => 'search'),
+//            array('bus_id, source_station_id, destination, free_seats, occupied_seats, created_at', 'required'),
+//            array('bus_id, source_station_id, free_seats, occupied_seats', 'length', 'max' => 10),
+//            array('destination', 'length', 'max' => 255),
+//            array('departure_time, arrival_time', 'safe'),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, bus_id, source_station_id, destination, departure_time, arrival_time, free_seats, occupied_seats, created_at', 'safe', 'on' => 'search'),
         );
     }
 
